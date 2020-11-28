@@ -13,7 +13,7 @@ function App() {
           <Route path="/checkout">
             <Checkout />
           </Route>
-          <Route>
+          <Route path="/">
             <Home />
           </Route>
         </Switch>
