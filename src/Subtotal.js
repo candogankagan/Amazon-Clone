@@ -1,18 +1,22 @@
-import React from 'react';
-import './Subtotal.css';
-import CurrentFormat from 'react-currency-format';
+import React from 'react'
+import './Subtotal.css'
+import CurrentFormat from 'react-currency-format'
+import { useStateValue } from './StateProvider'
 
 function Subtotal() {
+  const [{ basket }, dispatch] = useStateValue()
+  console.log(basket)
   return (
-    <div className="subtotal">
+    <div className='subtotal'>
       <CurrentFormat
         renderText={(value) => (
           <>
             <p>
-              Subtotal (0 items): <strong>0</strong>
+              Subtotal ({basket.length} items):{' '}
+              <strong>{basket.reduce((tot, arr) => tot + arr.price, 0)}</strong>
             </p>
-            <small className="subtotal_gift">
-              <input type="checkbox" />
+            <small className='subtotal_gift'>
+              <input type='checkbox' />
               This order contains a gift
             </small>
           </>
@@ -25,7 +29,7 @@ function Subtotal() {
       />
       <button>Proceed to Checkout</button>
     </div>
-  );
+  )
 }
 
-export default Subtotal;
+export default Subtotal
