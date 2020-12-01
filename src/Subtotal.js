@@ -12,8 +12,7 @@ function Subtotal() {
         renderText={(value) => (
           <>
             <p>
-              Subtotal ({basket.length} items):{' '}
-              <strong>{basket.reduce((tot, arr) => tot + arr.price, 0)}</strong>
+              Subtotal ({basket.length} items): <strong>{value}</strong>
             </p>
             <small className='subtotal_gift'>
               <input type='checkbox' />
@@ -22,10 +21,10 @@ function Subtotal() {
           </>
         )}
         decimalScale={2}
-        value={0}
+        value={basket.reduce((tot, arr) => tot + arr.price, 0)}
         displayType={'text'}
         thousandSeparator={true}
-        prefix={'£'}
+        prefix={'$'}
       />
       <button>Proceed to Checkout</button>
     </div>
