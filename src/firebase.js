@@ -1,3 +1,5 @@
+import firebase from 'firebase'
+
 const firebaseConfig = {
   apiKey: 'AIzaSyD2U8xbhXZz9aGBgsB6Ogt-75pwxxXCqNk',
   authDomain: 'challenge-8b632.firebaseapp.com',
@@ -6,4 +8,11 @@ const firebaseConfig = {
   storageBucket: 'challenge-8b632.appspot.com',
   messagingSenderId: '954897208569',
   appId: '1:954897208569:web:891e97ea6a07a3ba24fe28',
-};
+}
+
+const firebaseApp = firebase.initializeApp(firebaseConfig)
+
+const db = firebaseApp.firestore()
+const auth = firebase.auth()
+
+export { db, auth }
