@@ -29,7 +29,6 @@ function Login() {
         if (auth) {
           history.push('/')
         }
-        console.log(auth)
       })
       .catch((err) => alert(err))
   }
