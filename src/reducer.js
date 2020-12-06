@@ -15,6 +15,7 @@ export const reducer = (state, action) => {
         (basketItem) => basketItem.id === action.id
       )
       const newBasket = [...state.basket]
+      console.log(newBasket)
 
       if (index >= 0) {
         newBasket.splice(index, 1)
