@@ -21,14 +21,11 @@
     border-bottom: 1px solid lightgray;
 }
 
-.payment_items {
-    margin-left: 20px;
-}
-
 .payment_title {
     flex: 0.2;
 }
 
-.payment_address {
+.payment_address,
+.payment_items {
     flex: 0.8;
 }
