@@ -3,6 +3,7 @@ import './Payment.css'
 import { useStateValue } from './StateProvider'
 import CheckoutProduct from './CheckoutProduct'
 import { Link } from 'react-router-dom'
+import FlipMove from 'react-flip-move'
 
 function Payment() {
     const [{ basket, user }] = useStateValue()
@@ -29,15 +30,18 @@ function Payment() {
                         <h3>Review items and delivery</h3>
                     </div>
                     <div className='payment_items'>
-                        {basket.map((item) => (
-                            <CheckoutProduct
-                                id={item.id}
-                                title={item.title}
-                                image={item.image}
-                                price={item.price}
-                                rating={item.rating}
-                            />
-                        ))}
+                        <FlipMove>
+                            {basket.map((item, index) => (
+                                <CheckoutProduct
+                                    key={index}
+                                    id={item.id}
+                                    title={item.title}
+                                    image={item.image}
+                                    price={item.price}
+                                    rating={item.rating}
+                                />
+                            ))}
+                        </FlipMove>
                     </div>
                 </div>
                 <div className='payment_section'>
