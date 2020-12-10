@@ -4,9 +4,13 @@ import { useStateValue } from './StateProvider'
 import CheckoutProduct from './CheckoutProduct'
 import { Link } from 'react-router-dom'
 import FlipMove from 'react-flip-move'
+import { CardElement, useElements, useStripe } from '@stripe/react-stripe-js'
 
 function Payment() {
     const [{ basket, user }] = useStateValue()
+
+    const stripe = useStripe()
+    const elements = useElements()
 
     return (
         <div className='payment'>
@@ -48,7 +52,11 @@ function Payment() {
                     <div className='payment_title'>
                         <h3>Payment Method</h3>
                     </div>
-                    <div className='payment_details'> </div>
+                    <div className='payment_details'>
+                        <form>
+                            <CardElement />
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
