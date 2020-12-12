@@ -18,5 +18,21 @@ app.use(express.json())
 // api routes
 app.get('/', (request, response) => response.status(200).send('hello'))
 
+app.post('/payments/create', async (request, response) => {
+    const total = request.query.total
+
+    console.log(`Payment request recieved >>>`, total)
+
+    const paymentIntent = await stripe.paymentIntents.create({
+        amount: total,
+        currency: 'usd',
+    })
+
+    response.status(201).send({
+        clientSecret: paymentIntent.client_secret,
+    })
+})
 // listen command
 exports.api = functions.https.onRequest(app)
+
+// http://localhost:5001/challenge-8b632/us-central1/api
