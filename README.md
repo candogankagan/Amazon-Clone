@@ -1,1 +1,3 @@
-## https://challenge-8b632.web.app/
+Including payment page and authentication.
+
+# https://challenge-8b632.firebaseapp.com/
