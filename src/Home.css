@@ -1,19 +1,18 @@
 .home {
-  display: flex;
-  justify-content: center;
-  margin: auto;
-  max-width: 1500px;
+    margin: auto;
+    max-width: 1500px;
+    width: 100%;
 }
 
 .home_row {
-  display: flex;
-  z-index: 1;
-  margin: 0 5px;
+    display: flex;
+    z-index: 1;
+    margin: 0 5px;
 }
 
 .home_image {
-  width: 100%;
-  z-index: -1;
-  margin-bottom: -150px;
-  mask-image: linear-gradient(to top, transparent 5%, rgb(0, 0, 0) 90%);
+    width: 100%;
+    z-index: -1;
+    margin-bottom: -150px;
+    mask-image: linear-gradient(to top, transparent 5%, rgb(0, 0, 0) 90%);
 }
